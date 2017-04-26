@@ -1,0 +1,5 @@
+R(a,b) -> false
+S(a) & S(b) -> R(a,b)
+true -> S(a)
+true -> T(b)
+T(b) -> S(b)

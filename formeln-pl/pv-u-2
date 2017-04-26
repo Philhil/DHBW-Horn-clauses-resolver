@@ -1,0 +1,5 @@
+R(a,v) -> false
+S(x) & S(y) -> R(x,y)
+true -> S(a)
+true -> T(z)
+T(w) -> S(w)

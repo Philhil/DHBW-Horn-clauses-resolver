@@ -1,0 +1,4 @@
+S(x,y) & P(x) -> false
+Q(f(x)) -> P(x) 
+true -> Q(f(g(a,b)))
+true -> S(g(s,t),g(s,t))

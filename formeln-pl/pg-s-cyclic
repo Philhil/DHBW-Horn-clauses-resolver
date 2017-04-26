@@ -1,0 +1,3 @@
+P(a) & R(b) -> false
+P(a) -> S(a,a)
+S(a,a) -> P(a)

@@ -1,0 +1,4 @@
+R(x) & S(x,f(x)) -> R(f(f(x)))
+true -> R(x)
+true -> S(a,f(a))
+R(f(f(a))) -> false

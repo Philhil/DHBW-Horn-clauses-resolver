@@ -1,0 +1,5 @@
+R(x) -> false
+S(x,x) -> R(x)
+P(f(x)) -> S(x,x)
+P(x) & S(a,a) -> R(x)
+true -> P(b)

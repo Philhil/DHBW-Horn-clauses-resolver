@@ -1,0 +1,5 @@
+A & B & C -> D
+D -> false
+A -> B
+A -> C
+true -> A

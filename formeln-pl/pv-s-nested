@@ -1,0 +1,4 @@
+R(x) & R(y) & P(f(g(x),y),g(y)) -> P(x,y)
+P(x,y) -> R (x)
+true -> P(a,b)
+P(c,d) -> false
