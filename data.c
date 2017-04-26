@@ -94,7 +94,7 @@ void print_formel(formel *_formel)
 	}
 	else
 	{
-		printf("=TRUE\n");
+		printf(" TRUE\n");
 	}
 }
 
@@ -188,7 +188,11 @@ bool resulution(lst_atom* _lstatom, lst_formel* _lstformel)
 		lst_formel* formelpointer = _lstformel;
 		while(formelpointer)
 		{
-			//make backup of data?
+
+printf("\n\nDEBUG\n");
+print_lst_atom(_lstatom);
+print_lst_formel(_lstformel);
+
 			if(compare_atom(_lstatom->data, formelpointer->data->kopf))
 			{
 				if (!formelpointer->data->liste)
@@ -200,7 +204,6 @@ bool resulution(lst_atom* _lstatom, lst_formel* _lstformel)
 
 				return resulution(formelpointer->data->liste, _lstformel);
 			}
-			//restore backup of data ?
 
 			formelpointer = formelpointer->next;
 		}
@@ -212,6 +215,7 @@ bool resulution(lst_atom* _lstatom, lst_formel* _lstformel)
 
 bool compare_atom(atom* _atom1, atom* _atom2)
 {
+
 	if (_atom1 && _atom2 && strcmp(_atom1->praedikat, _atom2->praedikat) == 0)
 	{
 		if (!_atom1->liste && !_atom2->liste)
@@ -299,19 +303,13 @@ bool compare_lst_term(lst_term* _lstterm1, lst_term* _lstterm2)
 {
 	if (_lstterm1 && _lstterm2)
 	{
-
-		//make backup of terms and unifylist
-		int retcompare = compare_term(_lstterm1->data, _lstterm2->data);
-		//if ret 0 -> restore backup
-
+		int retcompare = compare_term(_lstterm1->data, _lstterm2->data);	
 
 		if(retcompare >= 1)
 		{
 			if (retcompare == 2)
 			{
 				_lstterm1->data = _lstterm2->data;
-
-				//TODO ersetzen
 
 				print_unification();
 
